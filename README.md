@@ -11,3 +11,5 @@ The essential issues are coverd in detail donw below:
 You can use command:  `<pip install-r requirements.txt>` to install dependence.
 
 This project follows MIT license.
+
+![image](https://github.com/KylrZhou/Kylrs-Quick-Dictionary/blob/main/Material/REFLECTIMPLEMENTARKHIVE.png)
