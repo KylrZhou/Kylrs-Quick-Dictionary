@@ -64,7 +64,7 @@ def ObtProDic(tar): #Obatain Professional Dictionary
 
 tar= "hello"
 
-Url = "https://dict.cnki.net/fyzs-front-api/translate/querytranslatedate"
+Url = "YOUR OWN API"
 Headers = {
     "Content-Type":"application/json;charset=UTF-8",
     "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36",
