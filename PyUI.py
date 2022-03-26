@@ -1,3 +1,9 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""Author: Kylr Zhou Web: www.kylrzhou.com                                                                          
+""""The frosted glass effect is quoted from 之一Yo CSDN Forum https://blog.csdn.net/zhiyiYo/article/details/106739263
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 import sys
 from PyQt5.QtWidgets import QApplication,QWidget,QDesktopWidget,QLineEdit,QLabel
 from PyQt5.QtGui import QIcon, QMovie
@@ -205,7 +211,7 @@ class TrnsDspl(QWidget):#The translated massage UI
     def AdL_Count(self, vbox, trans):#Function of translate
         #print("Function Started!")
         print("trans value is:", trans)
-        trans_dict = DataMiner.demi1()#Get translated dictionary from DataMiner.py, and store it into translate dictionary
+        trans_dict = DataMiner.ObtAcdDic(trans)#Get translated dictionary from DataMiner.py, and store it into translate dictionary
         print(trans_dict)
         #print("Dict Got!")
         tmp = QVBoxLayout()#Define tmp as QVBoxLayout() Obj
