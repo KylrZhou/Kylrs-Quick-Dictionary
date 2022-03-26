@@ -1,0 +1,4 @@
+system_hotkey==1.0.3
+requests==2.27.1
+beautifulsoup4==4.10.0
+PyQt5==5.15.6
