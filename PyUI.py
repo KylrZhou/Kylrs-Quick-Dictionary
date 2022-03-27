@@ -1,13 +1,15 @@
-import sys
-from PyQt5.QtWidgets import QApplication,QWidget,QDesktopWidget,QLineEdit,QLabel
-from PyQt5.QtGui import QIcon, QMovie
-from PyQt5.Qt import *
+import random
 from ctypes import cdll
 from ctypes.wintypes import HWND
-import DataMiner
-import random
+from PyQt5.Qt import *
 from system_hotkey import SystemHotkey
+import DataMiner
 
+#Amended At 27/03/2022 Amended the fault that led to package fail
+import os
+import sys
+os.environ['REQUESTS_CA_BUNDLE'] =  os.path.join(os.path.dirname(sys.argv[0]), 'cacert.pem')
+#--------------------#
 
 def getRandomSet(bits):#Ouputs random string
     num_set = [chr(i) for i in range(48,58)]
@@ -190,7 +192,7 @@ class TrnsDspl(QWidget):#The translated massage UI
         Adons2.setFont(QFont("Microsoft YaHei", 14))  # Set Font MS YaHei size of 18
         Adons2.setFixedSize(self.width * 0.07, self.height * 0.04)  # Set the Fixed Size
         Adons2.setStyleSheet("background:transparent;border-width:0;border-style:outset;color:rgb(100,100,100)")  # Set the style: transparent background and bourderless and Font color
-        print("attribute defined!")
+        #print("attribute defined!")
         tmp2 = QHBoxLayout()
         tmp2.addWidget(Adons1)
         tmp2.addWidget(Adons2)
