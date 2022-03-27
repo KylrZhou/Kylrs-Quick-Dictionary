@@ -1,9 +1,3 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""Author: Kylr Zhou Web: www.kylrzhou.com                                                                          
-""""The frosted glass effect is quoted from 之一Yo CSDN Forum https://blog.csdn.net/zhiyiYo/article/details/106739263
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 import sys
 from PyQt5.QtWidgets import QApplication,QWidget,QDesktopWidget,QLineEdit,QLabel
 from PyQt5.QtGui import QIcon, QMovie
@@ -115,6 +109,10 @@ class UI(QWidget):#Main window UI
             BL_outer = 1
         else:#When the target has been translated
             self.boolen_counter = 0#Now next traget will be translated
+#Amended At 27/03/2022 Repaired the issue that the program could not be reused
+            self.Dict_input.setFocus()
+            self.Dict_input.setFocusPolicy(Qt.TabFocus)
+#--------------------#
             BL_outer = 0
             self.Dict_input.setText("")#Clear the Dictionary Input for next input
             #print("Text removed!")
@@ -132,6 +130,7 @@ class UI(QWidget):#Main window UI
             print("all item in layout removed!")
             print("Elements in layout Before:",a,",After:",b)"""
             cntner = None#Clear the container(QWidget) for next define
+            cntner = QWidget()
             self.sub_win.close()#Close the sub window
 
 class TrnsDspl(QWidget):#The translated massage UI
@@ -210,14 +209,14 @@ class TrnsDspl(QWidget):#The translated massage UI
 
     def AdL_Count(self, vbox, trans):#Function of translate
         #print("Function Started!")
-        print("trans value is:", trans)
+        #print("trans value is:", trans)
         trans_dict = DataMiner.ObtAcdDic(trans)#Get translated dictionary from DataMiner.py, and store it into translate dictionary
-        print(trans_dict)
+        #print(trans_dict)
         #print("Dict Got!")
         tmp = QVBoxLayout()#Define tmp as QVBoxLayout() Obj
-        print("tmp setted!")
+        #print("tmp setted!")
         for i in trans_dict:#Transval the whole dictionary
-            print(i, "set")
+            #print(i, "set")
             self.AdLbl(tmp, i['name'], i['wordFreq'])#Put the translate target into tmp(QVBoxLayout)
         vbox.setLayout(tmp)#Set tmp as vbox's layout
         #print("layout Setted!")
